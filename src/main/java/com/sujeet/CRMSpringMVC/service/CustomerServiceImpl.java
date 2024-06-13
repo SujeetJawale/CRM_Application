@@ -1,6 +1,7 @@
 package com.sujeet.CRMSpringMVC.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,16 @@ public class CustomerServiceImpl implements ICustomerService {
 	@Override
 	public void registerCustomer(Customer customer) {
 		repo.save(customer);
+	}
+
+	@Override
+	public Optional<Customer> fetchCustomerById(Integer id) {
+		return repo.findById(id);
+	}
+
+	@Override
+	public void deleteCustomer(Integer id) {
+		repo.deleteById(id);
 	}
 
 }

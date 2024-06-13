@@ -34,7 +34,12 @@
     	           
     	           </tr>
     	           <c:forEach var="customer"  items="${customers}">
-    	           
+    	           <c:url var="UpdateLink" value="/updateForm">
+    	           <c:param name="customerId" value="${customer.id}"></c:param>
+    	           </c:url>
+    	           <c:url var="DeleteLink" value="/deleteData">
+    	           <c:param name="customerId" value="${customer.id}"></c:param>
+    	           </c:url>
     	           <tr>
     	              <td>${customer.firstName}</td>
     	              <td>${customer.lastName}</td>
